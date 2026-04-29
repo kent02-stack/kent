@@ -41,4 +41,4 @@ jobs:
 
         oc login --token=$TOKEN --server=$SERVER --insecure-skip-tls-verify
 
-        oc new-app python:3.11~. --name=fleetflow-cicd || oc start-build fleetflow-cicd --from-dir=. --follow
+        oc new-app registry.access.redhat.com/ubi9/python-311~. --name=fleetflow-cicd --strategy=source || oc start-build fleetflow-cicd --from-dir=. --follow
